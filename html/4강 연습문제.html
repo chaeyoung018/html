@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title> HTML5 기초</title>
+        <style>
+            .bigtexts {
+            background: blue;
+            width: 500px;
+            height: 500px;
+            font-size:50px;
+            color:white;
+            }
+            </style>
+            <div class="bigtexts">제목입니다!</div>
+            
+    </head>
+    <body>
+        <div id="testbox" onClick="changeText()">TEST</div>
+
+        HELLO HTML5 안녕!
+        <script>
+
+            alert("Hello World");
+            console.log("new methods of communication");
+            let texts = ["GOOD", "WORLD", "HELLO", "MORNING", "HATE", "LOVE"]; 
+
+function changeText() {
+  let myObj = document.getElementById('testbox');
+
+  let num = parseInt(Math.random() * 6);
+  myObj.innerHTML = texts[num];
+}
+
+            </script>
+    <div id="hoverBox" style="width:200px;height:200px;background-color:lightblue;">
+        마우스를 올려보세요
+      </div>
+      
+      <script>
+        const box = document.getElementById('hoverBox');
+      
+        box.addEventListener('mouseover', function() {
+          box.style.backgroundColor = 'lightgreen';
+        });
+      
+        box.addEventListener('mouseout', function() {
+          box.style.backgroundColor = 'lightblue';
+        });
+      </script>
+      <button id="myButton">클릭해보세요</button>
+      <p id="myText">여기에 텍스트가 있어요.</p>
+      
+      <script>
+        const button = document.getElementById('myButton');
+        const text = document.getElementById('myText');
+      
+        button.addEventListener('click', function() {
+          text.textContent = '버튼을 클릭했어요!';
+        });
+      </script>
+            
+    
+    </body>
+</html>

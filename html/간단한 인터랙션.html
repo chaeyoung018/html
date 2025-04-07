@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>인터랙션</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { margin: 0; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        flex-direction: column;}
+    
+    .movebox {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        background-color: red;
+        transition: 0.5s ease-in-out;
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        border-radius: 12px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+
+    .movebox:nth-child(2) {
+        width: 200px;
+        height: 200px;
+        background-color: blueviolet;
+        border-radius: 50%;
+        font-style: italic;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .movebox:hover {
+        border: 10px solid #ff0000;
+        background-color: darkcyan;
+        transform: scale(1.1);
+    }
+
+    .movebox:focus {
+        border: 10px solid #6fff00;
+        background-color: rgb(65, 0, 139);
+        transform: rotate(5deg);
+    }
+    body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: salmon;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            transition: all 0.5s ease;
+        }
+        
+        .box.move:hover {
+            transform: translateX(-50px);
+            background-color: darkblue;
+        }
+     
+        .box.rotate:hover {
+            transform: rotate(360deg);
+            background-color: brown;
+        }
+        
+        .box.scale:hover {
+            transform: scale(1.5);
+            background-color: cornflowerblue;
+        }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="interactive-button">CLICK!</button>
+  </div>
+
+  <div class="movebox">Circle</div>
+  <div class="movebox">Square</div>
+  <div class="container">
+    <div class="box move">Move</div>
+    <div class="box rotate">Rotate</div>
+    <div class="box scale">Scale</div>
+</div>
+
+  <script>
+    document.querySelectorAll(".movebox").forEach((box, index) => {
+        box.addEventListener("click", () => {
+            box.style.transform = `translateX(${(index + 1) * 100}px)`;
+        });
+    });
+  </script>
+
+</body>
+</html>
